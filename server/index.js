@@ -17,6 +17,25 @@ app.use(
     credentials: true,
   })
 );
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://car-renting-system.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
+app.options("*", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://car-renting-system.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.status(204).end();
+});
+
 app.use(cookieParser());
 
 mongoose.connect(process.env.DB_URL);
