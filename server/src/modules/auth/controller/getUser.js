@@ -8,9 +8,7 @@ const getUserController = async (req, res) => {
       user,
     });
   } catch (err) {
-    res
-      .status(500)
-      .send({ error: "An error occurred while fetching user details" });
+    res.send({ error: "An error occurred while fetching user details" });
   }
 };
 
