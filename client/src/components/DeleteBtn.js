@@ -5,7 +5,7 @@ export default function DeleteBtn({ carID, fetchCarList }) {
   const deleteCar = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:9999/api/car/deletecar", // Replace with your API endpoint
+        "https://car-renting-system-api.vercel.app/api/car/deletecar", // Replace with your API endpoint
         { carID }, // Send carID in the body
         { withCredentials: true } // Include credentials
       );

@@ -20,7 +20,7 @@ export default function page() {
         };
 
         const response = await axios.post(
-          "http://localhost:9999/api/car/addcar",
+          "https://car-renting-system-api.vercel.app/api/car/addcar",
           dataToSend,
           {
             headers: {

@@ -10,12 +10,15 @@ export default function Car() {
 
   const fetchCarList = async () => {
     try {
-      const response = await axios.get("http://localhost:9999/api/car/getcar", {
-        withCredentials: true,
-        params: {
-          id: userInfo._id, // Pass the user ID as a query parameter
-        },
-      });
+      const response = await axios.get(
+        "https://car-renting-system-api.vercel.app/api/car/getcar",
+        {
+          withCredentials: true,
+          params: {
+            id: userInfo._id, // Pass the user ID as a query parameter
+          },
+        }
+      );
 
       // Axios response is already parsed as JSON, so no need for response.json()
       const data = response.data;

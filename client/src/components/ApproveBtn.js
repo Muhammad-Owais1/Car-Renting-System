@@ -9,7 +9,7 @@ export default function ApproveBtn({ carID, fetchCarList }) {
       // Axios PATCH request
       const { username, email } = userInfo;
       const response = await axios.patch(
-        "http://localhost:9999/api/car/approvecarreq", // Replace with your API endpoint
+        "https://car-renting-system-api.vercel.app/api/car/approvecarreq", // Replace with your API endpoint
         { carID }, // Data to send in the body
         {
           withCredentials: true, // Include credentials (e.g., cookies, tokens)

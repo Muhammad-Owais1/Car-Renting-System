@@ -10,7 +10,7 @@ export default function Nav({ haveAccount, setHaveAccount }) {
   const logout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:9999/api/auth/logout",
+        "https://car-renting-system-api.vercel.app/api/auth/logout",
         {},
         { withCredentials: true }
       );

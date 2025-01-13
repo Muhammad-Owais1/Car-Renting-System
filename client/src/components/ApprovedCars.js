@@ -11,7 +11,7 @@ export default function Car() {
     const fetchCarList = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:9999/api/car/getallcars",
+          "https://car-renting-system-api.vercel.app/api/car/getallcars",
           {
             withCredentials: true,
           }

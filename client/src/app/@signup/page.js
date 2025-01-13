@@ -11,7 +11,7 @@ export default function page() {
     async (prevState, formData) => {
       try {
         const response = await axios.post(
-          "http://localhost:9999/api/auth/signup",
+          "https://car-renting-system-api.vercel.app/api/auth/signup",
           formData,
           {
             headers: {

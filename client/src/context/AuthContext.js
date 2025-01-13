@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUserInfo = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:9999/api/auth/getinfo",
+          "https://car-renting-system-api.vercel.app/api/auth/getinfo",
           {
             withCredentials: true,
           }
