@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.options("*", cors());
 app.use(
   cors({
-    origin: "https://car-renting-system.vercel.app/",
+    origin: "https://car-renting-system.vercel.app",
     credentials: true,
   })
 );
