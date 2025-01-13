@@ -3,12 +3,14 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
 
 import routes from "./src/routes/index.js";
 const PORT = process.env.PORT || 9999;
 const app = express();
 
 app.use(express.json());
+app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
