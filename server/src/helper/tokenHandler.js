@@ -5,7 +5,8 @@ const authentication = (req, res, next) => {
   const token = req.cookies?.token;
 
   if (!token) {
-    return res.status(401).json({ message: "Token missing" });
+    // return res.status(401).json({ message: "Token missing" });
+    return;
   }
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
