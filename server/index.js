@@ -15,16 +15,14 @@ app.use(express.json());
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 
-// CORS Configuration (Manually setting headers)
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://car-renting-system.vercel.app"
-  ); // Replace with your frontend URL
-  res.setHeader("Access-Control-Allow-Credentials", "true"); // Allow credentials (cookies, authorization headers, etc.)
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE"); // Allowed methods
-  next();
-});
+// CORS Configuration
+const corsOptions = {
+  origin: 'https://car-renting-system.vercel.app', // Replace with your frontend URL
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+};
+
+app.use(cors(corsOptions));
 
 // Cookie parser middleware
 app.use(cookieParser());
@@ -52,3 +50,4 @@ app.use("/api", routes);
 app.listen(PORT, () => {
   console.log(`App running at PORT:${PORT}.`);
 });
+
